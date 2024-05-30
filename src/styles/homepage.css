@@ -1,0 +1,306 @@
+/* homepage.css */
+
+.header {
+  padding-bottom: 12%;
+  padding-top: 5%;
+}
+
+.custom-btn {
+  padding: 14px 30px;
+  background-color: #FF2525;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.text-center img {
+  border-radius: 25px;
+  width: 75%;
+  height: auto;
+}
+
+.tipe {
+  background: linear-gradient(to left, #FFA800, #FF2525);
+  padding: 50px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tipe img {
+  padding: 10px;
+  margin-top: -150px;
+  transition: transform 0.3s ease;
+}
+
+.tipe img:hover {
+  transform: scale(1.1);
+  filter: grayscale(10%) brightness(60%);
+}
+
+.tipe h5 {
+  text-align: center;
+  color: white;
+}
+
+.resep {
+  padding-top: 30px;
+}
+
+.artikel .card img {
+  width: 100%;
+  max-height: 150px;
+  align-items: center;
+}
+
+.cuaca {
+  padding-top: 50px;
+}
+
+.cuaca p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Poppins';
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cuaca h3 {
+  padding-top: 25px;
+  font-size: 14px;
+}
+
+.cuaca h5 {
+  font-size: 14px;
+}
+
+.logok {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.logok img {
+  max-width: 500px;
+  margin: 0 20px;
+}
+
+.logok img:hover {
+  transform: scale(1.1);
+}
+
+.carousel .card {
+  max-width: 80%;
+  border: none;
+  margin: 0 auto;
+  background: linear-gradient(to bottom left, #FFA800, #FF2525);
+}
+
+.carousel .card-body {
+  padding-top: 40px;
+}
+
+.carousel .card-body h5 {
+  color: white;
+}
+
+.carousel .card-body p {
+  color: white;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 12px;
+}
+
+.carousel .card-img {
+  max-height: 350px;
+  object-fit: cover;
+}
+
+.carousel .card-title {
+  font-weight: bold;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+
+.carousel .btn-primary {
+  background-color: #ffffff;
+  border-color: #ff6347;
+  color: red;
+  border-radius: 30px;
+}
+
+.carousel .btn-primary:hover {
+  background-color: #faa789;
+  border-color: #f19f80;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.card-header {
+  max-height: 80%;
+}
+
+.forum {
+  padding-top: 130px;
+  box-sizing: border-box;
+}
+
+.forum h1,
+p {
+  font-family: 'Poppins';
+}
+
+.forum .col-md-4 img {
+  max-width: 500px;
+  max-height: 200px;
+}
+
+.forum .card-title {
+  font-family: 'Poppins';
+  background: linear-gradient(to right, red, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.forum .card {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.forum .card-text {
+  font-size: 16px;
+}
+
+.forum .lastupdate {
+  font-family: 'Poppins';
+  background: linear-gradient(to right, red, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.forum .profileakun p,
+small {
+  font-family: 'Poppins';
+  background: linear-gradient(to right, red, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 768px) {
+  .card-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-info .rounded-circle {
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.profile-info small {
+  margin-left: 10px;
+}
+
+.artikel {
+  padding-top: 50px;
+}
+
+.artikel .card {
+  background: linear-gradient(45deg, #FF2525, #FF2525, #FFA800);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.artikel .card-img-top {
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  max-height: 150px;
+  transition: transform 0.3s ease;
+}
+
+.artikel .card-img-top:hover {
+  transform: scale(1.1);
+}
+
+.artikel .card-title {
+  color: white;
+}
+
+.artikelain .btn-primary {
+  background: linear-gradient(to right, #FF2525, #FFA800);
+  border: none;
+  padding: 15px 15%;
+  font-size: 14px;
+  border-radius: 100px;
+}
+
+.forumlain .btn-primary {
+  background: linear-gradient(to right, #FF2525, #FFA800);
+  border: none;
+  padding: 15px 10%;
+  font-size: 14px;
+  border-radius: 100px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, auto));
+  width: 100%;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.border-custom {
+  display: inline-block;
+  padding: 4px 18px;
+  border-radius: 10px;
+  border: 2
+}
