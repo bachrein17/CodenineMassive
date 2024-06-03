@@ -1,4 +1,8 @@
 import React from 'react';
+import './forumcard.css';
+import likeimg from '../image/like.png';
+import viewimg from '../image/view.png';
+import commentimg from '../image/comment.png';
 
 const ForumCardWithImage = ({ image, title, description, uploadedTime, profileImage, profileName, profileRole, likeCount, viewCount, commentCount }) => {
   const likeClicked = (elementId) => {
@@ -14,18 +18,15 @@ const ForumCardWithImage = ({ image, title, description, uploadedTime, profileIm
   };
 
   const viewClicked = () => {
-    // Redirect to another page for viewing the full post
-    window.location.href = '/fullpost'; // Change the URL as needed
+    window.location.href = '/fullpost'; 
   };
 
   const commentClicked = () => {
-    // Redirect to another page for commenting on the post
-    window.location.href = '/comments'; // Change the URL as needed
+    window.location.href = '/comments'; 
   };
 
   return (
     <div className="col">
-      {/* Forum card content */}
       <div className="card">
         <div className="card-header" style={{ backgroundColor: 'transparent', border: 'none' }}>
           <div className="row">
@@ -47,17 +48,17 @@ const ForumCardWithImage = ({ image, title, description, uploadedTime, profileIm
             <p className="mb-0" style={{ marginLeft: '10px' }}>{profileName}</p>
             <small className="text-muted">{profileRole}</small>
           </div>
-          <div className="ms-auto">
+          <div>
             <span className="border-custom">
               <button onClick={() => likeClicked(likeCount)}>
-                <img src="image/like.png" alt="" style={{ width: '15px', height: '12px' }} /><span id={likeCount}>10</span>
+                <img src={likeimg} alt="Like" style={{ width: '15px', height: '12px', marginRight: '10px' }} /><span id={likeCount}>0</span>
               </button>
             </span>
             <button className="border-custom" onClick={viewClicked}>
-              <img src="image/view.png" alt="" style={{ width: '15px', height: '12px' }} />{viewCount}
+              <img src={viewimg} alt="View" style={{ width: '15px', height: '12px', marginRight: '10px' }} /><span id={viewCount}>0</span>
             </button>
             <button className="border-custom" onClick={commentClicked}>
-              <img src="image/comment.png" alt="" style={{ width: '14px', height: '12px' }} />{commentCount}
+              <img src={commentimg} alt="Comment" style={{ width: '14px', height: '12px', marginRight: '10px' }} /><span id={commentCount}>0</span>
             </button>
           </div>
         </div>

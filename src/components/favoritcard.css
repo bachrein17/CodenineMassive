@@ -1,0 +1,9 @@
+.card-favorit img {
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transisi smooth untuk transform dan filter */
+}
+
+.card-favorit img:hover {
+    transform: scale(1.1);
+    filter: grayscale(10%) brightness(60%);
+    cursor: pointer;
+}

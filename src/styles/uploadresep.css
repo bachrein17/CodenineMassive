@@ -1,5 +1,4 @@
   .heading h2 {
-    font-family: "Poppins", sans-serif;
     text-align: center;
     font-size: 26px;
     padding-top: 4%;
@@ -12,12 +11,12 @@
     flex-wrap: wrap;
   }
   
-  .upload {
+  .uploadawal {
     flex: 1;
     padding-bottom: 8%;
   }
   
-  .upload img {
+  .uploadawal img {
     display: flex;
     max-width: 800px;
     max-height: 400px;
@@ -64,7 +63,6 @@
   .deskripsi p {
     padding-left: 10px;
     font-size: 12px;
-    font-family: "Poppins";
   }
   
   @media (max-width: 768px) {
@@ -159,7 +157,6 @@
   }
   
   .datauser .form-label{
-    font-family: 'Poppins';
     font-weight: 400px;
   }
   .datauser form{
