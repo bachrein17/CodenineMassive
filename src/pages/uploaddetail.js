@@ -1,188 +1,324 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import '../styles/uploaddetail.css';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 
-function UploadDetail() {
-    const [imageURL, setImageURL] = useState('image/unggahdisini.png');
-    const [langkahMasak, setLangkahMasak] = useState(['Langkah 1: Kupas bawang']);
-    const [bahanMasakan, setBahanMasakan] = useState([]);
+const DetailUploadResep = () => {
+    const [rincianBahan, setRincianBahan] = useState(['']);
+    const [caramasak, setCaramasak] = useState([{ step: '', image: null }]);
     const [tags, setTags] = useState([]);
-    const [judul, setJudul] = useState('');
-    const [deskripsi, setDeskripsi] = useState('');
+    const [tagInput, setTagInput] = useState('');
+    const [uploadedImage, setUploadedImage] = useState(null);
+    const [uploadedIconImage, setUploadedIconImage] = useState(null);
+    const [selectedPorsi, setSelectedPorsi] = useState('Untuk berapa porsi?');
+    const [selectedWaktu, setSelectedWaktu] = useState('Berapa lama waktu memasak?');
+    const [selectedKategori, setSelectedKategori] = useState('Termaksud kategori apa ?');
 
-    const handleImageUpload = (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            const imageURL = URL.createObjectURL(file);
-            setImageURL(imageURL);
+    const handleBahanChange = (index, event) => {
+        const newRincianBahan = [...rincianBahan];
+        newRincianBahan[index] = event.target.value;
+        setRincianBahan(newRincianBahan);
+    };
+
+    const addBahan = () => setRincianBahan([...rincianBahan, '']);
+
+    const removeBahan = (index) => {
+        const newRincianBahan = rincianBahan.filter((_, i) => i !== index);
+        setRincianBahan(newRincianBahan);
+    };
+
+    const handleCaramasakChange = (index, event) => {
+        const newCaramasak = [...caramasak];
+        newCaramasak[index].step = event.target.value;
+        setCaramasak(newCaramasak);
+    };
+
+    const handleCaramasakImageChange = (index, event) => {
+        const newCaramasak = [...caramasak];
+        newCaramasak[index].image = URL.createObjectURL(event.target.files[0]);
+        setCaramasak(newCaramasak);
+    };
+
+    const addCaramasak = () => setCaramasak([...caramasak, { step: '', image: null }]);
+
+    const removeCaramasak = (index) => {
+        const newCaramasak = caramasak.filter((_, i) => i !== index);
+        setCaramasak(newCaramasak);
+    };
+
+    const handleTagInputChange = (event) => setTagInput(event.target.value);
+
+    const handleTagInputKeyPress = (event) => {
+        if (event.key === 'Enter' && tagInput.trim() !== '') {
+            setTags([...tags, tagInput.trim()]);
+            setTagInput('');
         }
     };
 
-    const addCaramasak = () => {
-        setLangkahMasak([...langkahMasak, '']);
+    const removeTag = (index) => {
+        const newTags = tags.filter((_, i) => i !== index);
+        setTags(newTags);
     };
 
-    const removeCaramasak = (index) => {
-        const newLangkahMasak = [...langkahMasak];
-        newLangkahMasak.splice(index, 1);
-        setLangkahMasak(newLangkahMasak);
+    const handleImageUpload = (event) => {
+        setUploadedImage(URL.createObjectURL(event.target.files[0]));
     };
 
-    const submitRecipe = () => {
-        const recipeData = {
-            thumbnail: imageURL,
-            judul: judul,
-            deskripsi: deskripsi,
-            langkahMasak: langkahMasak,
-            bahanMasakan: bahanMasakan,
-            tags: tags
-        };
-        console.log(recipeData);
+    const handleIconImageUpload = (event) => {
+        setUploadedIconImage(URL.createObjectURL(event.target.files[0]));
     };
 
-    const addBahanMasakan = () => {
-        setBahanMasakan([...bahanMasakan, '']);
+    const handlePorsiSelect = (porsi) => {
+        setSelectedPorsi(porsi);
     };
 
-    const removeBahanMasakan = (index) => {
-        const newBahanMasakan = [...bahanMasakan];
-        newBahanMasakan.splice(index, 1);
-        setBahanMasakan(newBahanMasakan);
+    const handleWaktuSelect = (waktu) => {
+        setSelectedWaktu(waktu);
     };
 
-    const addTag = (tag) => {
-        setTags([...tags, tag]);
+    const handleKategoriSelect = (kategori) => {
+        setSelectedKategori(kategori);
     };
 
     const images = require.context('../image', true);
 
     return (
-        <>
+        <div>
             <Navbar />
+            <div className="back">
+                <a href="/uploadresep">
+                    <img src={images('./back.png')} alt="back" />
+                </a>
+            </div>
+            <div className="judul">
+                <h2>Bagikan Resep Andalanmu</h2>
+            </div>
+
+            {/* Detail Upload */}
             <div className="container">
-                <div style={{ paddingLeft: '20px' }}>
-                    <a href="/uploadresep">
-                        <img src={images('./back.png')} alt="" />
-                    </a>
-                </div>
-                <div style={{ textAlign: 'center', fontSize: '25px', fontWeight: '700' }}>
-                    <h2>Bagikan Resep Andalanmu</h2>
-                </div>
-                <div style={{ padding: '20px', marginTop: '10%', display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                <div className="upload">
                     <label htmlFor="fileUpload" style={{ paddingBottom: '20px' }}>
-                        <input type="file" id="fileUpload" className="file-input" accept="image/*" onChange={handleImageUpload} style={{ display: 'none' }} />
-                        <img src={images('./unggahdisini.png')} alt="" style={{ width: '500px', height: 'auto', borderRadius: '5px', boxShadow: '0 0 5px rgba(0, 0, 0, 0.1)', marginRight: '100px', cursor: 'pointer' }} />
+                        <input
+                            type="file"
+                            id="fileUpload"
+                            className="file-input"
+                            accept="image/*"
+                            onChange={handleImageUpload}
+                        />
+                        <img
+                            id="gambarDetailResep"
+                            src={uploadedImage || images('./unggahdisini.png')}
+                            alt="upload resep"
+                        />
                     </label>
-                    <form style={{ flex: 1, maxWidth: '400px' }}>
-                        <div style={{ marginBottom: '15px' }}>
-                            <label className="form-label" style={{ fontWeight: '650', fontFamily: 'Poppins' }}>Nama Masakanmu</label>
-                            <input type="text" className="form-control" placeholder="Ketik nama masakanmu" style={{ width: '100%', border: '1px solid #FF2525', color: '#FF2525', padding: '10px' }} />
+                    <form>
+                        <div className="nmasakan">
+                            <label className="form-label">Nama Masakanmu</label>
+                            <input type="text" className="nama-resep" placeholder="Ketik nama masakanmu" />
                         </div>
-                        <div style={{ marginTop: '20px', paddingBottom: '20px' }}>
-                            <label className="form-label" style={{ display: 'block', marginBottom: '5px' }}>Penjelasan Resepmu</label>
-                            <textarea id="deskripsiResep" className="form-control" placeholder="Deskripsikan cerita menarik tentang resepmu" style={{ width: '100%', height: '150px', padding: '10px', fontSize: '14px', border: '1px solid #ccc', borderRadius: '5px', resize: 'none' }}></textarea>
+                        <div className="penjelasan">
+                            <label className="form-label">Penjelasan Resepmu</label>
+                            <textarea
+                                id="deskripsiResep"
+                                className="deskripsi-resep"
+                                placeholder="Deskripsikan cerita menarik tentang resepmu"
+                            ></textarea>
                         </div>
-                        <label htmlFor="fileUpload2" className="btn btn-primary" style={{ display: 'block', width: 'calc(100% - 30px)', background: 'linear-gradient(to right, red, orange)', border: 'none', fontFamily: 'Poppins', padding: '10px', textAlign: 'center' }}>
-                            <input type="file" id="fileUpload2" className="file-input" style={{ display: 'none' }} />
-                            <img src={images('./uploadicon.png')} alt="" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                        <label htmlFor="fileUpload2" className="btn btn-primary">
+                            <input
+                                type="file"
+                                id="fileUpload2"
+                                className="file-input"
+                                accept="image/*"
+                                onChange={handleImageUpload}
+                            />
+                            <img
+                                src={uploadedIconImage || images('./uploadicon.png')}
+                                alt="uploadicon"
+                                className="button-icon"
+                            />
                             Unggah foto masakanmu
                         </label>
                     </form>
                 </div>
-                <div style={{ marginTop: '20px', fontFamily: 'Poppins', fontSize: '24px' }}>
+
+                {/* Rincian Bahan */}
+                <div className="rincian">
                     <h2>Masukan Rincian Bahan</h2>
-                    {bahanMasakan.map((item, index) => (
-                        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }} key={index}>
-                            <input type="text" className="form-control" placeholder={`Contoh: ${index + 1} sdm Garam`} style={{ flex: 1, width: '50%', marginRight: '50px', border: '1px solid #FF2525', borderRadius: '5px', color: 'red', padding: '10px' }} />
-                            <div style={{ paddingLeft: '10px' }}>
-                                <img src={images('./tambahdetail.png')} alt="" className="action-button" style={{ cursor: 'pointer' }} onClick={addBahanMasakan} />
-                                {index !== 0 && <img src={images('./kurangdetail.png')} alt="Kurang" className="action-button" style={{ cursor: 'pointer', paddingLeft: '10px' }} onClick={() => removeBahanMasakan(index)} />}
+                    {rincianBahan.map((bahan, index) => (
+                        <div className="bahan" key={index}>
+                            <input
+                                type="text"
+                                className="bahannya"
+                                placeholder="Contoh: 2sdm Garam"
+                                value={bahan}
+                                onChange={(e) => handleBahanChange(index, e)}
+                            />
+                            <div className="img-container">
+                                <img
+                                    src={images('./tambahdetail.png')}
+                                    alt="Tambah"
+                                    className="action-button"
+                                    onClick={addBahan}
+                                />
+                                <img
+                                    src={images('./kurangdetail.png')}
+                                    alt="Kurang"
+                                    style={{ marginLeft: '10px' }}
+                                    className={`action-button ${index === 0 ? 'disabled' : ''}`}
+                                    onClick={() => index > 0 && removeBahan(index)}
+                                />
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className="dropdown" style={{ display: 'flex', marginTop: '20px' }}>
-                    <div className="banyaksaji" style={{ paddingRight: '10px' }}>
-                        <h3 style={{ marginTop: '40px', fontFamily: 'Poppins', fontSize: '24px' }}>Banyak Sajian</h3>
+
+                {/* Dropdowns */}
+                <div className="dropdown">
+                    <div className="banyaksaji">
+                        <h3>Banyak Sajian</h3>
                         <div className="dropdown">
-                            <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style={{ border: '1px solid red', backgroundColor: 'transparent', color: 'red', width: '100%' }}>
-                                Untuk berapa porsi ?
+                            <a
+                                className="btn btn-secondary dropdown-toggle"
+                                href="#"
+                                role="button"
+                                id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                {selectedPorsi}
                             </a>
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1" style={{ border: '1px solid red', backgroundColor: 'transparent' }}>
-                                <li><a className="dropdown-item" href="#" style={{ color: 'red' }}>1 Porsi</a></li>
-                                <li><a className="dropdown-item" href="#" style={{ color: 'red' }}>2 Porsi</a></li>
-                                <li><a className="dropdown-item" href="#" style={{ color: 'red' }}>3 Porsi</a></li>
-                                <li><a className="dropdown-item" href="#" style={{ color: 'red' }}>4 Porsi</a></li>
-                                <li><a className="dropdown-item" href="#" style={{ color: 'red' }}>5 Porsi</a></li>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a className="dropdown-item" onClick={() => handlePorsiSelect('1 Porsi')}>1 Porsi</a></li>
+                                <li><a className="dropdown-item" onClick={() => handlePorsiSelect('2 Porsi')}>2 Porsi</a></li>
+                                <li><a className="dropdown-item" onClick={() => handlePorsiSelect('3 Porsi')}>3 Porsi</a></li>
+                                <li><a className="dropdown-item" onClick={() => handlePorsiSelect('4 Porsi')}>4 Porsi</a></li>
+                                <li><a className="dropdown-item" onClick={() => handlePorsiSelect('5 Porsi')}>5 Porsi</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div className="waktu" style={{ padding: '0 10px' }}>
-                        <h3 style={{ marginTop: '40px', fontFamily: 'Poppins', fontSize: '24px' }}>Waktu Memasak</h3>
+                    <div className="waktu">
+                        <h3>Waktu Memasak</h3>
                         <div className="dropdown">
-                            <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style={{ border: '1px solid red', backgroundColor: 'transparent', color: 'red', width: '100%' }}>
-                                Berapa Menit ?
+                            <a
+                                className="btn btn-secondary dropdown-toggle"
+                                href="#"
+                                role="button"
+                                id="dropdownMenuButton2"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                {selectedWaktu}
                             </a>
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton2" style={{ border: '1px solid red', backgroundColor: 'transparent' }}>
-                                <li><a className="dropdown-item" href="#" style={{ color: 'red' }}>5 Menit</a></li>
-                                <li><a className="dropdown-item" href="#" style={{ color: 'red' }}>10 Menit</a></li>
-                                <li><a className="dropdown-item" href="#" style={{ color: 'red' }}>15 Menit</a></li>
-                                <li><a className="dropdown-item" href="#" style={{ color: 'red' }}>20 Menit</a></li>
-                                <li><a className="dropdown-item" href="#" style={{ color: 'red' }}>25 Menit</a></li>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li><a className="dropdown-item" onClick={() => handleWaktuSelect('10 Menit')}>10 Menit</a></li>
+                                <li><a className="dropdown-item" onClick={() => handleWaktuSelect('15 Menit')}>15 Menit</a></li>
+                                <li><a className="dropdown-item" onClick={() => handleWaktuSelect('30 Menit')}>30 Menit</a></li>
+                                <li><a className="dropdown-item" onClick={() => handleWaktuSelect('1 Jam')}>1 Jam</a></li>
+                                <li><a className="dropdown-item" onClick={() => handleWaktuSelect('1 Jam 30 Menit')}>1 Jam 30 Menit</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="kategori">
+                        <h3>Kategori</h3>
+                        <div className="dropdown">
+                            <a
+                                className="btn btn-secondary dropdown-toggle"
+                                href="#"
+                                role="button"
+                                id="dropdownMenuButton3"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                {selectedKategori}
+                            </a>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                <li><a className="dropdown-item" onClick={() => handleKategoriSelect('Camilan')}>Camilan</a></li>
+                                <li><a className="dropdown-item" onClick={() => handleKategoriSelect('Takjil')}>Takjil</a></li>
+                                <li><a className="dropdown-item" onClick={() => handleKategoriSelect('Dessert')}>Dessert</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div style={{ marginTop: '20px', fontFamily: 'Poppins', fontSize: '24px' }}>
-                    <h2>Masukan Langkah-langkah Masak</h2>
-                    {langkahMasak.map((step, index) => (
-                        <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                            <input type="text" className="form-control" placeholder={`Langkah ${index + 1}: ...`} style={{ flex: 1, marginRight: '10px', border: '1px solid #FF2525', color: 'red', padding: '10px' }} />
-                            <div>
-                                <img src={images('./tambahdetail.png')} alt="Tambah" className="action-button" style={{ cursor: 'pointer' }} onClick={addCaramasak} />
-                                {index !== 0 && <img src={images('./kurangdetail.png')} alt="Kurang" className="action-button" style={{ cursor: 'pointer', paddingLeft: '10px' }} onClick={() => removeCaramasak(index)} />}
+
+                {/* Cara Memasak */}
+                <div className="cara-memasak">
+                    <h2>Cara Memasak</h2>
+                    {caramasak.map((cara, index) => (
+                        <div className="caranya" style={{ display: 'flex', alignItems: 'center', margin: '20px 0' }} key={index}>
+                            <label htmlFor="fileUploadstep" style={{ paddingBottom: '20px' }}>
+                                <input
+                                    type="file"
+                                    id="fileUploadstep"
+                                    className="file-input-step"
+                                    accept="image/*"
+                                    onChange={(e) => handleCaramasakImageChange(index, e)}
+                                />
+                                <img
+                                    src={cara.image || images('./unggahdisini.png')}
+                                    alt={`Step ${index + 1}`}
+                                    className="cara-image"
+                                    style={{ maxWidth: '200px', maxHeight: '200px' }}
+                                />
+                            </label>
+                            <input
+                                type="text"
+                                className="text-caranya"
+                                placeholder="Langkah memasak"
+                                style={{ border: '1px solid #FF2525', borderRadius: '5px', color: 'red', padding: '10px', flex: '1', margin: '20px' }}
+                                value={cara.step}
+                                onChange={(e) => handleCaramasakChange(index, e)}
+                            />
+                            <div className="img-container md-9">
+                                <img
+                                    src={images('./tambahdetail.png')}
+                                    alt="Tambah"
+                                    className="action-button"
+                                    onClick={addCaramasak}
+                                />
+                                <img
+                                    src={images('./kurangdetail.png')}
+                                    alt="Kurang"
+                                    style={{ marginLeft: '10px' }}
+                                    className={`action-button ${index === 0 ? 'disabled' : ''}`}
+                                    onClick={() => index > 0 && removeCaramasak(index)}
+                                />
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className="kategori" style={{ marginTop: '20px', fontFamily: 'Poppins' }}>
-                    <h2 style={{ fontSize: '24px' }}>Kategori</h2>
-                    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                        <div style={{ marginRight: '10px' }}>
-                            <input type="checkbox" id="kategori1" />
-                            <label htmlFor="kategori1" style={{ paddingLeft: '10px', fontSize: '20px' }}>Nasi</label>
-                        </div>
-                        <div style={{ marginRight: '10px' }}>
-                            <input type="checkbox" id="kategori2" />
-                            <label htmlFor="kategori2" style={{ paddingLeft: '10px', fontSize: '20px' }}>Ayam</label>
-                        </div>
-                        <div style={{ marginRight: '10px' }}>
-                            <input type="checkbox" id="kategori3" />
-                            <label htmlFor="kategori3" style={{ paddingLeft: '10px', fontSize: '20px' }}>Daging</label>
-                        </div>
-                        <div style={{ marginRight: '10px' }}>
-                            <input type="checkbox" id="kategori4" />
-                            <label htmlFor="kategori4" style={{ paddingLeft: '10px', fontSize: '20px' }}>Sayuran</label>
-                        </div>
-                    </div>
-                </div>
-                <div className="tag" style={{ marginTop: '20px', fontFamily: 'Poppins', marginBottom: '40px' }}>
-                    <h2 style={{ fontSize: '24px' }}>Tag</h2>
-                    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                        {['Pedas', 'Manis', 'Gurih', 'Asin'].map((tag, index) => (
-                            <button key={index} style={{ border: '1px solid #FF2525', color: '#FF2525', borderRadius: '20px', padding: '10px 20px', fontSize: '20px', margin: '5px' }} onClick={() => addTag(tag)}>
+
+                {/* Tags */}
+                <h2>Tag Kata Kunci</h2>
+                <div className="tag">
+                    <input
+                        type="text"
+                        placeholder="Tambahkan Kata Kunci Sesuai Resep Anda"
+                        value={tagInput}
+                        style={{width:'100%', border:'none'}}
+                        onChange={handleTagInputChange}
+                        onKeyPress={handleTagInputKeyPress}
+                    />
+                    <div className="tag-list">
+                        {tags.map((tag, index) => (
+                            <span className="tag-item" key={index}>
                                 {tag}
-                            </button>
+                                <button className="tag-remove" onClick={() => removeTag(index)}>X</button>
+                            </span>
                         ))}
                     </div>
                 </div>
-                <button className="btn btn-primary" onClick={submitRecipe} style={{ display: 'block', width: 'calc(100% - 30px)', background: 'linear-gradient(to right, red, orange)', border: 'none', fontFamily: 'Poppins', padding: '10px', textAlign: 'center', marginBottom: '20px' }}>
-                    Bagikan Resep
-                </button>
+
+                <div className="buttonunggah ">
+                    <a href="#" className="tag-button">Tag Kata Kunci</a>
+                    <a href="/sukses" className="up-button">Unggah Resep</a>
+                </div>
             </div>
             <Footer />
-        </>
+        </div>
     );
-}
+};
 
-export default UploadDetail;
+export default DetailUploadResep;

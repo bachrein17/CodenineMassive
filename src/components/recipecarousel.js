@@ -32,15 +32,15 @@ const RecipeCarousel = () => {
   const previous = () => {
     const newIndex = activeIndex === 0 ? recipes.length - 1 : activeIndex - 1;
     setActiveIndex(newIndex);
-  }
+  };
 
   const next = () => {
     const newIndex = activeIndex === recipes.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(newIndex);
-  }
+  };
 
   return (
-    <div id="CarouselResep" className="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div id="CarouselResep" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
         {recipes.map((recipe, index) => (
           <div key={index} className={`carousel-item ${index === activeIndex ? 'active' : ''}`}>
@@ -53,11 +53,11 @@ const RecipeCarousel = () => {
           </div>
         ))}
       </div>
-      <button className="carousel-control-prev" role="button" onClick={previous}>
+      <button className="carousel-control-prev" type="button" data-bs-target="#CarouselResep" data-bs-slide="prev" onClick={previous}>
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Previous</span>
       </button>
-      <button className="carousel-control-next" role="button" onClick={next}>
+      <button className="carousel-control-next" type="button" data-bs-target="#CarouselResep" data-bs-slide="next" onClick={next}>
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>

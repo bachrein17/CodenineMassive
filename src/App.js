@@ -1,4 +1,6 @@
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import HomePage from './pages/homepage';
 import LoginForm from './pages/login';
 import Signup from './pages/signup';

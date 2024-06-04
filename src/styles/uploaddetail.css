@@ -9,8 +9,7 @@
 }
 
 .upload {
-    padding: 20px;
-    margin-top: 10%;
+    padding: 20px 0 10px 0;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -27,12 +26,10 @@
 
 .upload form {
     flex: 1;
-    max-width: 400px;
 }
 
 .upload .form-label {
     font-weight: 650;
-    font-family: 'Poppins';
 }
 
 .upload .form-control {
@@ -51,7 +48,6 @@
     width: calc(100% - 30px);
     background: linear-gradient(to right, red, orange);
     border: none;
-    font-family: 'Poppins';
     padding: 10px;
 }
 
@@ -83,7 +79,6 @@
 
 .rincian h2 {
     margin-top: 20px;
-    font-family: 'Poppins';
     font-size: 24px;
 }
 
@@ -106,6 +101,12 @@
 .file-input {
     display: none;
 }
+
+.file-input-step {
+    display: none;
+}
+
+
 
 .bahan {
     display: flex;
@@ -146,11 +147,11 @@
 .dropdown {
     display: flex;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .dropdown h3 {
     margin-top: 40px;
-    font-family: 'Poppins';
     font-size: 24px;
 }
 
@@ -170,7 +171,6 @@
 
 .dropdown-menu {
     border: 1px solid red;
-    background-color: transparent;
 }
 
 .dropdown-item {
@@ -198,6 +198,10 @@
 }
 
 #fileUpload {
+    display: none;
+}
+
+#fileUploadstep {
     display: none;
 }
 
@@ -253,6 +257,7 @@
     font-size: 14px;
     border: 1px solid #FF2525;
     border-radius: 20px;
+    width: 100%;
 }
 
 .tag:hover {
@@ -275,12 +280,12 @@
 
 .katakunci h2 {
     margin-top: 20px;
-    font-family: 'Poppins';
 }
 
 .buttonunggah {
     text-align: center; 
     margin-top: 20px; 
+    margin-bottom: 20px;
 }
 
 .buttonunggah .tag-button {

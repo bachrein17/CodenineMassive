@@ -69,7 +69,7 @@ const Favorit = () => {
                     }}>
                         Buat Sarapan (12)
                     </h2>
-                    <div className='cardfavorit' style={{display:'flex'}}>
+                    <div className='cardfavorit' style={{display:'flex', flexWrap: 'wrap'}}>
                         <CardFavorit
                             image="./favorit1.png"
                             porsi="1 Porsi"
