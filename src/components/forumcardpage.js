@@ -36,7 +36,7 @@ const ForumCardPage = ({ image, title, tags, uploadedTime, profileImage, profile
             <div className="col-md-8">
               <div className="card-body">
                 <h5 className="card-title">{title}</h5>
-                <div className="card-tags">
+                <div className="card-tags" style={{display:'flex', flexWrap:'wrap'}}>
                   {tags.map((tagfr, index) => (
                     <span key={index} className="tagfr">
                       <span className="border-custom">{tagfr}</span>

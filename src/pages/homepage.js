@@ -84,7 +84,6 @@ const Body = () => {
             <div className="carousel-inner">
               <RecipeCarousel />
             </div>
-            {/* Tambahkan tombol navigasi carousel jika diperlukan */}
           </div>
         </div>
 

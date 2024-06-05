@@ -11,6 +11,7 @@ import Favorit from './pages/favorit';
 import SuccessPage from './pages/sukses';
 import Resep from './pages/resep';
 import Artikel from './pages/artikel';
+import DetailArtikel from './pages/detailartikel';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/sukses' element={<SuccessPage/>} />
         <Route path='/resep' element={<Resep/>} />
         <Route path='/artikel' element={<Artikel/>}/>
+        <Route path='/detailartikel' element={<DetailArtikel/>}/>
       </Routes>
     </Router>
   );

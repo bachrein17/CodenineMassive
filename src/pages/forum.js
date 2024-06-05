@@ -12,6 +12,13 @@ class Forum extends React.Component {
         return (
             <div>
                 <Navbar />
+                <div className='container'>
+                <div className="back" style={{marginTop:'20px'}}>
+                    <a href="/">
+                        <img src={images('./back.png')} alt="back" />
+                    </a>
+                </div>
+            </div>
                 <div className="container mt-5 py-2">
                     <header className="container-fluid banner">
                         <div className="row align-items-center">
