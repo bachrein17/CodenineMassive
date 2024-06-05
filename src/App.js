@@ -10,6 +10,7 @@ import UploadDetail from './pages/uploaddetail';
 import Favorit from './pages/favorit';
 import SuccessPage from './pages/sukses';
 import Resep from './pages/resep';
+import Artikel from './pages/artikel';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/favorit' element={<Favorit/>} />
         <Route path='/sukses' element={<SuccessPage/>} />
         <Route path='/resep' element={<Resep/>} />
+        <Route path='/artikel' element={<Artikel/>}/>
       </Routes>
     </Router>
   );

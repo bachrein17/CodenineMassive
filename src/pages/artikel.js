@@ -1,17 +1,16 @@
 import React from 'react';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
-import ResepContent from '../components/resepcontent';
+import ContentArticle from '../components/contentarticle';
 
-
-const Resep = () => {
+const Artikel = () => {
     return (
         <div>
             <Navbar />
-            <ResepContent/>
+            <ContentArticle/>
             <Footer />
         </div>
     );
 }
 
-export default Resep;
+export default Artikel;
