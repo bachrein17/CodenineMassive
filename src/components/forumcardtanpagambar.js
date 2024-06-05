@@ -34,9 +34,9 @@ const ForumCardTanpaGambar = ({ image, title, tags, uploadedTime, profileImage, 
               <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <div className="card-tags">
-                  {tags.map((tag, index) => (
-                    <span key={index} className="tag">
-                      <span className="border-custom">{tag}</span>
+                  {tags.map((tagfr, index) => (
+                    <span key={index} className="tagfr">
+                      <span className="border-custom">{tagfr}</span>
                     </span>
                   ))}
                 </div>

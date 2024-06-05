@@ -23,6 +23,12 @@ const DetailUploadResep = () => {
     };
 
     const addBahan = () => setRincianBahan([...rincianBahan, '']);
+    
+    const handleBahanKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            addBahan();
+        }
+    };
 
     const removeBahan = (index) => {
         const newRincianBahan = rincianBahan.filter((_, i) => i !== index);
@@ -162,6 +168,7 @@ const DetailUploadResep = () => {
                                     alt="Tambah"
                                     className="action-button"
                                     onClick={addBahan}
+                                    onKeyPress={handleBahanKeyPress}
                                 />
                                 <img
                                     src={images('./kurangdetail.png')}
@@ -248,10 +255,10 @@ const DetailUploadResep = () => {
                     <h2>Cara Memasak</h2>
                     {caramasak.map((cara, index) => (
                         <div className="caranya" style={{ display: 'flex', alignItems: 'center', margin: '20px 0' }} key={index}>
-                            <label htmlFor="fileUploadstep" style={{ paddingBottom: '20px' }}>
+                            <label htmlFor={`fileUploadstep-${index}`} style={{ paddingBottom: '20px' }}>
                                 <input
                                     type="file"
-                                    id="fileUploadstep"
+                                    id={`fileUploadstep-${index}`}
                                     className="file-input-step"
                                     accept="image/*"
                                     onChange={(e) => handleCaramasakImageChange(index, e)}
@@ -292,22 +299,27 @@ const DetailUploadResep = () => {
 
                 {/* Tags */}
                 <h2>Tag Kata Kunci</h2>
-                <div className="tag">
-                    <input
-                        type="text"
-                        placeholder="Tambahkan Kata Kunci Sesuai Resep Anda"
-                        value={tagInput}
-                        style={{width:'100%', border:'none'}}
-                        onChange={handleTagInputChange}
-                        onKeyPress={handleTagInputKeyPress}
-                    />
-                    <div className="tag-list">
-                        {tags.map((tag, index) => (
-                            <span className="tag-item" key={index}>
-                                {tag}
-                                <button className="tag-remove" onClick={() => removeTag(index)}>X</button>
-                            </span>
-                        ))}
+                <div className="tag-container">
+                    <div className="tag-content">
+                        <div className="tag-input">
+                            <input
+                                id="tagInput"
+                                type="text"
+                                placeholder="Tambahkan Kata Kunci Sesuai Resep Anda"
+                                value={tagInput}
+                                onChange={handleTagInputChange}
+                                onKeyPress={handleTagInputKeyPress}
+                            />
+                        </div>
+                        <div className='line'></div>
+                        <div className="tag-list">
+                            {tags.map((tag, index) => (
+                                <span className="tag" key={index}>
+                                    {tag}
+                                    <span className="close" onClick={() => removeTag(index)}>X</span>
+                                </span>
+                            ))}
+                        </div>
                     </div>
                 </div>
 

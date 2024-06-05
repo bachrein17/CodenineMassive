@@ -6,22 +6,16 @@
   cursor: pointer;
 }
 
-.tag {
+.tagfr {
   display: inline-block; 
-  margin: 5px; 
+  margin: 5px;
+  color: white; 
 }
 
-.tag .border-custom {
-  background-color: transparent;
+.tagfr .border-custom {
+  background: linear-gradient(45deg,#FF2525 60%, #FFA800);
   border: 1px solid #FF2525;
   border-radius: 50px;
   padding: 5px 15px; 
   transition: background-color 0.3s ease;
-}
-
-.tag .border-custom:hover {
-  background: linear-gradient(45deg, #FF2525, #FFA800);
-  border-color: transparent;
-  color: #fff;
-  border: none;
 }

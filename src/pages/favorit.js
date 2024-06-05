@@ -93,6 +93,70 @@ const Favorit = () => {
                         />
                     </div>
                 </div>
+                <div className="text2">
+                <h2 style={{ 
+                        fontWeight: '600', 
+                        fontStyle: 'normal', 
+                        marginTop: '31px' 
+                    }}>
+                        Buat Sarapan (12)
+                    </h2>
+                    <div className='cardfavorit' style={{display:'flex', flexWrap: 'wrap'}}>
+                        <CardFavorit
+                            image="./favorit1.png"
+                            porsi="1 Porsi"
+                            waktu="30 Menit"
+                            title="Bebek Bumbu Hitam Brodi"
+                            publisher="Tretan Muslim"
+                        />
+                        <CardFavorit
+                            image="./favorit1.png"
+                            porsi="1 Porsi"
+                            waktu="30 Menit"
+                            title="Bebek Bumbu Hitam Brodi"
+                            publisher="Tretan Muslim"
+                        />
+                        <CardFavorit
+                            image="./favorit1.png"
+                            porsi="1 Porsi"
+                            waktu="30 Menit"
+                            title="Bebek Bumbu Hitam Brodi"
+                            publisher="Tretan Muslim"
+                        />
+                    </div>
+                </div>
+                <div className="text3">
+                <h2 style={{ 
+                        fontWeight: '600', 
+                        fontStyle: 'normal', 
+                        marginTop: '31px' 
+                    }}>
+                        Buat Sarapan (12)
+                    </h2>
+                    <div className='cardfavorit' style={{display:'flex', flexWrap: 'wrap'}}>
+                        <CardFavorit
+                            image="./favorit1.png"
+                            porsi="1 Porsi"
+                            waktu="30 Menit"
+                            title="Bebek Bumbu Hitam Brodi"
+                            publisher="Tretan Muslim"
+                        />
+                        <CardFavorit
+                            image="./favorit1.png"
+                            porsi="1 Porsi"
+                            waktu="30 Menit"
+                            title="Bebek Bumbu Hitam Brodi"
+                            publisher="Tretan Muslim"
+                        />
+                        <CardFavorit
+                            image="./favorit1.png"
+                            porsi="1 Porsi"
+                            waktu="30 Menit"
+                            title="Bebek Bumbu Hitam Brodi"
+                            publisher="Tretan Muslim"
+                        />
+                    </div>
+                </div>
             </div>
             <Footer />
         </div>

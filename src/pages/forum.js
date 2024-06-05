@@ -5,7 +5,7 @@ import ForumCardPage from '../components/forumcardpage';
 import ForumCardTanpaGambar from '../components/forumcardtanpagambar';
 
 const images = require.context('../image', true);
-const tags = ['React', 'JavaScript', 'Web Development'];
+
 
 class Forum extends React.Component {
     render() {
@@ -34,8 +34,8 @@ class Forum extends React.Component {
                             <div className="col-lg-6">
                                 <ForumCardPage
                                     image={images('./forum-1.png')}
-                                    title="Learn React with Examples"
-                                    tags={tags}
+                                    title="Tiap tahun saya selalu buat nastar, tapi kok nastar saya selalu keras kayak batu ya?"
+                                    tags={['Nastar', 'Tips', 'Kue Kering', 'Makanan Hari Raya']}
                                     uploadedTime="2 Jam"
                                     profileImage={images('./profilakun1.png')}
                                     profileName="John Doe"
@@ -48,8 +48,8 @@ class Forum extends React.Component {
                             <div className="col-lg-6">
                                 <ForumCardPage
                                     image={images('./forum-1.png')}
-                                    title="Learn React with Examples"
-                                    tags={tags}
+                                    title="Alhamdulillah, kemarin saya nyoba2 buat catering menu buka puasa, eh banyak yang order, senangnyaa..."
+                                    tags={['Menu Makanan Malam', 'Rendang', 'Nasi Goreng', 'Catering']}
                                     uploadedTime="2 Jam"
                                     profileImage={images('./profilakun1.png')}
                                     profileName="John Doe"
