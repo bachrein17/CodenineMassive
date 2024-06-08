@@ -12,6 +12,8 @@ import SuccessPage from './pages/sukses';
 import Resep from './pages/resep';
 import Artikel from './pages/artikel';
 import DetailArtikel from './pages/detailartikel';
+import CuacaPanas from './pages/cuacapanas';
+import CuacaDingin from './pages/cuacadingin';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path='/resep' element={<Resep/>} />
         <Route path='/artikel' element={<Artikel/>}/>
         <Route path='/detailartikel' element={<DetailArtikel/>}/>
+        <Route path='/cuacadingin' element={<CuacaDingin/>}/>
+        <Route path='/cuacapanas' element={<CuacaPanas/>}/>
       </Routes>
     </Router>
   );
