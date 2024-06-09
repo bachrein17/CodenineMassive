@@ -12,6 +12,8 @@ import SuccessPage from './pages/sukses';
 import Resep from './pages/resep';
 import Artikel from './pages/artikel';
 import DetailArtikel from './pages/detailartikel';
+import UserProfile from './pages/profil';
+import DetailResep from './pages/detailresep';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path='/resep' element={<Resep/>} />
         <Route path='/artikel' element={<Artikel/>}/>
         <Route path='/detailartikel' element={<DetailArtikel/>}/>
+        <Route path='/profil' element={<UserProfile/>}/>
+        <Route path='/detailresep' element={<DetailResep/>}/>
       </Routes>
     </Router>
   );

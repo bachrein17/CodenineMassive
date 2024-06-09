@@ -46,7 +46,7 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="login" onClick={closeNavbar}>
+              <a className="nav-link active" aria-current="page" href="profil" onClick={closeNavbar}>
                 <img src={akunHitam} alt="Akun" />
               </a>
             </li>
