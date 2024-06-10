@@ -23,11 +23,12 @@ const CuacaDingin = () => {
                         Sambutlah petualangan kulinermu dengan kelezatan autentik Indonesia yang tak <br />
                         tertandingi. Temukan resep yang sesuai selera dan kebutuhanmu di sini!
                     </p>
-                    <div className='banner' style={{ backgroundColor: 'red', padding: '20px', textAlign: 'center', borderRadius: '20px', position: 'relative', overflow: 'hidden' }}>
-                        <p style={{ color: 'white', fontSize: '18px', textAlign:'left'}}>Cuaca Hari Ini Sangat <br/>Dingin dan Mendung</p>
-                        <img src={images('./awancerah.png')} alt="example" style={{ maxWidth: '200px', maxHeight: '200px', marginBottom: '10px', position: 'absolute', bottom: '-200px', left: '50%', transform: 'translateX(-50%)', transition: 'bottom 0.3s ease-in-out' }} />
-                        <img src={images('./matahari.png')} alt="example" style={{ maxWidth: '200px', maxHeight: '200px', marginBottom: '10px', position: 'absolute', bottom: '-200px', left: '50%', transform: 'translateX(-50%)', transition: 'bottom 0.3s ease-in-out' }} />
-                    </div>
+                        <div className='bannercuaca'>
+                            <p className='bannercuaca-text'>Cuaca Hari Ini Sangat <br />Dingin dan Mendung</p>
+                            <img className='awanmendung' src={images('./awanmendung.png')} alt="Awan Cerah" />
+                            <img className='petirkecil' src={images('./petir1.png')} alt="Matahari" />
+                            <img className='petirbesar' src={images('./petir2.png')} alt="Matahari" />
+                        </div>
 
                     <div className="row row-cols-1 row-cols-md-3 g-1" style={{ display: 'flex' }}>
                         <CardResep
