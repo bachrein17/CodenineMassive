@@ -13,7 +13,7 @@ const RecipeCard = ({ image, title, publisher, description }) => {
             <h5 className="card-title">{title}</h5>
             <p className="card-text">Publisher: {publisher}</p>
             <p className="card-text flex-grow-1">{description}</p>
-            <a href="#" className="btn btn-primary mt-auto" style={{ width: '35%' }}>Lihat Resep</a>
+            <a href="detailresep" className="btn btn-primary mt-auto" style={{ width: '35%' }}>Lihat Resep</a>
           </div>
         </div>
       </div>
