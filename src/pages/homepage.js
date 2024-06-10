@@ -26,7 +26,7 @@ const Body = () => {
               </div>
               <button className="custom-btn">Jelajahi Resep</button>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 d-none d-md-block">
               <div className="text-center">
                 <img src={images('./Mask group.png')} className="img-fluid" alt="Gambar" />
               </div>
@@ -40,33 +40,38 @@ const Body = () => {
           <img src={images('./Mask group-1.png')} alt="" />
           <h5>Makasan Tradisional</h5>
         </div>
-        <div className="d-none d-md-block">
+        <div>
           <img src={images('./Mask group-2.png')} alt="" />
           <h5>Resep Makan Malam</h5>
         </div>
-        <div className="d-none d-md-block">
+        <div>
           <img src={images('./Mask group-3.png')} alt="" />
           <h5>Resep Sarapan</h5>
         </div>
-        <div className="d-none d-md-block">
+        <div>
           <img src={images('./Mask group-4.png')} alt="" />
           <h5>Masakan Hari Raya</h5>
         </div>
-        <div className="d-none d-md-block">
+        <div>
           <img src={images('./Mask group-5.png')} alt="" />
           <h5>Dessert</h5>
         </div>
       </section>
 
-      <div className="container">
-        <div className="cuaca">
+      <div class="container">
+        <div class="cuaca">
           <p>Bagaimana kondisi cuaca di daerah anda?</p>
-          <div className="logok">
-            <a href="/cuacapanas">
-              <img src={images('./panas.png')} alt="" />
+          <div class="logok">
+            <a href="/cuacapanas" class="bannerc">
+              <p className='bannercuacatxthp'>Cuaca Hari Ini <br/> Sangat Panas</p>
+              <img className='awancerahhp' src={images('./awancerah.png')} alt="Awan Cerah" />
+              <img className='mataharihp' src={images('./matahari.png')} alt="Matahari" />
             </a>
-            <a href="/cuacadingin">
-              <img src={images('./dingin.png')} alt="" />
+            <a href="/cuacadingin" class="bannerc">
+            <p className='bannercuacatxthp'>Cuaca Hari Ini <br /> Sangat Dingin <br /> dan Mendung</p>
+              <img className='awanmendunghp' src={images('./awanmendung.png')} alt="Awan Mendung" />
+              <img className='petirkecilhp' src={images('./petir1.png')} alt="Petir" />
+              <img className='petirbesarhp' src={images('./petir1.png')} alt="Petir" />
             </a>
           </div>
         </div>
@@ -97,7 +102,7 @@ const Body = () => {
             <ArticleCard image={images('./artikel-6.png')} title="Kelezatan Citarasa Rendang, Kuliner Nusantara yang Terkenal Hingga Ke Mancanegara." />
           </div>
           <div className="artikelain text-center" style={{ paddingTop: '20px' }}>
-          <a href="/artikel" className="btn btn-primary btn-custom">Lihat artikel lainnya</a>
+            <a href="/artikel" className="btn btn-primary btn-custom">Lihat artikel lainnya</a>
           </div>
         </section>
 
@@ -166,8 +171,8 @@ const Body = () => {
             />
           </div>
           <div className="forumlain text-center" style={{ paddingTop: '20px', paddingBottom: '20px' }}>
-          <a href="/forum" className="btn btn-primary btn-custom">Forum Lainnya</a>
-            </div>
+            <a href="/forum" className="btn btn-primary btn-custom">Forum Lainnya</a>
+          </div>
         </section>
       </div>
       <Footer />

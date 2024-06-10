@@ -22,7 +22,7 @@ function SuccessPage({ thumbnail, judul, publisher, deskripsi }) {
                             {deskripsi}
                         </p>
                         <div className="text-center">
-                            <a href="#ulasan" className="btn btn-light" style={{ color: '#ff2525', borderRadius: '25px' }}>Lihat Resep Anda</a>
+                            <a href="/detailresep" className="btn btn-light" style={{ color: '#ff2525', borderRadius: '25px' }}>Lihat Resep Anda</a>
                         </div>
                     </div>
                 </div>
