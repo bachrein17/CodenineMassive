@@ -9,8 +9,9 @@ const CardFavorit = ({ image, porsi, waktu, title, publisher, onDelete }) => {
             <div className="card" style={{ borderRadius: '25px', borderColor: 'white', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', marginTop: '50px', margin: '35px', position: 'relative' }}>
                 <div className="image-wrapper" style={{ position: 'relative', display: 'inline-block' }}>
                     <img src={images(image)} alt="" style={{ paddingTop: '14px', paddingLeft: '15px', paddingRight: '15px', borderRadius: '35px', maxWidth: '250px', maxHeight: '300px', justifyContent: 'center' }} />
-                    <div className="delete-icon" onClick={onDelete} style={{ position: 'absolute', top: '15px', right: '15px' }}>
-                        <img src={images('./likefavorit.png')} alt="Delete" style={{ width: '40px', height: '40px' }} />
+                    <div className="delete-icon" onClick={onDelete} style={{ position: 'absolute', top: '15px', right: '15px', width: '46px', height: '46px', borderRadius: '50%', overflow: 'hidden' }}>
+                        <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: '50%', background: 'linear-gradient(50deg, #FF2525, #FF2525, #FFA800)' }}>
+                        <img src={images('./sudahfavicon.png')} alt="Delete" style={{ width: '26px', height: '26px', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />                        </div>
                     </div>
                 </div>
                 <div className="card-body">
