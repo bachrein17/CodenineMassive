@@ -254,7 +254,7 @@ const DetailUploadResep = () => {
                 <div className="cara-memasak">
                     <h2>Cara Memasak</h2>
                     {caramasak.map((cara, index) => (
-                        <div className="caranya" style={{ display: 'flex', alignItems: 'center', margin: '20px 0' }} key={index}>
+                        <div className="caranya" style={{ display: 'flex', flexWrap:'wrap', alignItems: 'center', margin: '20px 0' }} key={index}>
                             <label htmlFor={`fileUploadstep-${index}`} style={{ paddingBottom: '20px' }}>
                                 <input
                                     type="file"
@@ -324,8 +324,8 @@ const DetailUploadResep = () => {
                 </div>
 
                 <div className="buttonunggah ">
-                    <a href="#" className="tag-button">Tag Kata Kunci</a>
-                    <a href="/sukses" className="up-button">Unggah Resep</a>
+                <a href="#" className="tag-button">Tag Kata Kunci</a>
+                <a href="/sukses" className="up-button">Unggah Resep</a>
                 </div>
             </div>
             <Footer />
