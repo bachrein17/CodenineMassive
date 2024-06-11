@@ -99,15 +99,17 @@
   left: 0px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  width: 147px;
+  align-items: center;
+  width: 150px;
   height: 45px;
-  font: 4000 14px/1.5 "Poppins", Helvetica, Arial, serif;
+  font: 400 14px/1.5 "Poppins", Helvetica, Arial, serif;
+  border-color: rgb(255, 168, 0);
+  background-color: rgb(240,240,240);
   color: rgb(0, 0, 0);
   text-align: center;
-  background: var(--src) center center / 100% 100% no-repeat;
+  /* background: var(--src) center center / 100% 100% no-repeat; */
   border-radius: 22.5px 22.5px 22.5px 22.5px;
-  padding: 12px 26px 12px 26px;
+  padding: 12px 15px 13px 15px;
 }
 .btn1 {
   position: absolute;
@@ -121,11 +123,30 @@
   width: 144px;
   height: 45px;
   font: 400 13px/1.5 "Poppins", Helvetica, Arial, serif;
+  border-color: rgb(255, 168, 0);
   color: rgb(0, 0, 0);
   text-align:center;
   border-radius: 22.5px 22.5px 22.5px 22.5px;
   padding: 12px 32px 12px 32px;
   /* outline: 1px solid rgb(255, 168, 0); */
+}
+.custombutton1{
+  position: absolute;
+  top: 87px;
+  right: 588px;
+  bottom: 0px;
+  left: 176px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 144px;
+  height: 45px;
+  font: 400 13px/1.5 "Poppins", Helvetica, Arial, serif;
+  color: rgb(0, 0, 0);
+  text-align:center;
+  border-color: rgb(255, 168, 0);
+  border-radius: 22.5px 22.5px 22.5px 22.5px;
+  padding: 12px 32px 12px 32px;
 }
 .btn2 {
   position: absolute;
@@ -140,6 +161,7 @@
   height: 45px;
   font: 400 13px/1.5 "Poppins", Helvetica, Arial, serif; color: rgb(0, 0, 0);
   text-align: center;
+  border-color: rgb(255, 168, 0);
   border-radius: 22.5px 22.5px 22.5px 22.5px;
   padding: 12px 32px 12px 32px; 
   /* outline: 1px solid rgb(255, 168, 0); */
@@ -156,6 +178,7 @@
   font: 400 13px/1.5 "Poppins", Helvetica, Arial, serif;
   color: rgb(0, 0, 0);
   text-align: center;
+  border-color: rgb(255, 168, 0);
   border-radius: 22.5px 22.5px 22.5px 22.5px;
   padding: 12px 32px 12px 32px;
   /* outline: 1px solid rgb(255, 168, 0); */
@@ -178,6 +201,25 @@
   width: 151px;
   height: 45px;
   border-radius: 22.5px 22.5px 22.5px 22.5px;
+  background-color: rgb(255, 51, 0);
+  outline: 1px solid rgb(255, 168, 0);
+}
+.filterbutton {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -2px;
+  right: 0px;
+  bottom: 0px;
+  left: -2px;
+  width: 151px;
+  height: 45px;
+  font: 400 14px/1.5 "Poppins", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+  border-radius: 22.5px 22.5px 22.5px 22.5px;
+  background-color: rgb(255, 51, 0);
+  outline: 1px solid rgb(255, 168, 0);
 }
 .text1 {
   position: absolute;

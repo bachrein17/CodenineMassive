@@ -14,6 +14,7 @@ import Artikel from './pages/artikel';
 import DetailArtikel from './pages/detailartikel';
 import UserProfile from './pages/profil';
 import DetailResep from './pages/detailresep';
+import PopupFilter from './components/popupfilter';
 import CuacaPanas from './pages/cuacapanas';
 import CuacaDingin from './pages/cuacadingin';
 
@@ -36,6 +37,7 @@ function App() {
         <Route path='/detailresep' element={<DetailResep />} />
         <Route path='/cuacadingin' element={<CuacaDingin />} />
         <Route path='/cuacapanas' element={<CuacaPanas />} />
+        <Route path='/popupfilter' element={<PopupFilter/>}/>
       </Routes>
     </Router>
   );

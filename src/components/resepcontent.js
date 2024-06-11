@@ -17,9 +17,8 @@ import MiOngklok from '../image/resepcontent/ef9a16a8503cea4b29cd0e84440ccb34.pn
 import SotoSokoraja from '../image/resepcontent/877cecdc799f4d4c0a53afc40270a217.png';
 import BrambangAsem from '../image/resepcontent/5dc555a5003bddb8728d31ce1535f512.png';
 
-
 function renderSection2(props) {
-  return (
+    return (
     <section className={resepStyle.section2}>
       <div className={resepStyle.flex_col}>
         <div className={resepStyle.flex_col1}>
@@ -38,20 +37,22 @@ function renderSection2(props) {
           <div className={resepStyle.paragraph1}>Cari Resepmu</div>
           <img className={resepStyle.image13} src={SearchIcon} alt="alt text" />
           <button
-            className={resepStyle.btn}
-            style={{ '--src': `url(${'/assets/f16cfda66dfd6d53ddd1e889a74857f6.svg'})` }}>
-            Jawa Tengah</button>
-          <button className={resepStyle.btn1}>Jawa Barat</button>
+            className={resepStyle.btn}>Jawa Tengah</button>
+          <button className={resepStyle.custombutton1}>Jawa Barat</button>
           <button className={resepStyle.btn2}>Sumatra Barat</button>
           <button className={resepStyle.btn3}>Sulawesi Selatan</button>
 
           <div className={resepStyle.content_box9}>
             <img
-              className={resepStyle.cover3}
+              className={resepStyle.filterbutton}
               src={FilterButton}
               alt="alt text"
             />
+            <button id="filterbutton"
+            className={resepStyle.filterbutton}>
+            <a href="popupfilter" className={resepStyle.filterbutton} > </a>
             <div className={resepStyle.text1}>Filter</div>
+            </button>
             <img
               className={resepStyle.image14}
               src={FilterIcon}
@@ -59,6 +60,7 @@ function renderSection2(props) {
             />
           </div>
         </div>
+        
 
 {/*card*/}
 
@@ -271,5 +273,6 @@ function renderSection2(props) {
     </section>
   );
 }
+
 
 export default renderSection2;
