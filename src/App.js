@@ -14,6 +14,7 @@ import Artikel from './pages/artikel';
 import DetailArtikel from './pages/detailartikel';
 import UserProfile from './pages/profil';
 import DetailResep from './pages/detailresep';
+import PopupFilter from './components/popupfilter';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path='/detailartikel' element={<DetailArtikel/>}/>
         <Route path='/profil' element={<UserProfile/>}/>
         <Route path='/detailresep' element={<DetailResep/>}/>
+        <Route path='/popupfilter' element={<PopupFilter/>}/>
       </Routes>
     </Router>
   );
