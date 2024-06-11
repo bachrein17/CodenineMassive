@@ -40,6 +40,7 @@ function renderSection2(props) {
             <span className={contentarticleStyle.articledetail}>
               <span className={contentarticleStyle.articledetail_span0}>
                 Publisher : Dapur Mama Rika
+                
                 <br />
               </span>
               <span className={contentarticleStyle.articledetail_span1}>Kamis, 17 April 2024 14.00 WIB</span>

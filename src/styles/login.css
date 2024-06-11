@@ -59,14 +59,12 @@
     margin-bottom: 20px;
     display: inline-block;
     letter-spacing: 1px;
-    font-family: 'Poppins';
 }
 
 .halogin .contentbx .formbx p {
     text-align: center;
     width: 100%;
     font-weight: 400;
-    font-family: 'Poppins';
 }
 
 .halogin .contentbx .formbx .inputbx {
@@ -79,7 +77,6 @@
     color: #000000;
     font-weight: 500;
     letter-spacing: 1px;
-    font-family: 'Poppins';
 }
 
 .halogin .contentbx .formbx input {
@@ -93,7 +90,6 @@
     border-radius: 30px;
     border-color: #FF2525;
     border-image-slice: 1;
-    font-family: 'Poppins';
 }
 
 
@@ -112,7 +108,6 @@
     display: inline-block;
     width: 100%;
     margin: 0 auto;
-    font-family: 'Poppins';
 }
 
 .inputbx a.signin:hover {
@@ -138,7 +133,6 @@
     font-size: 14px;
     margin-left: 5px;
     white-space: nowrap;
-    font-family: 'Poppins';
 }
 
 .halogin .contentbx .formbx .remember-forgot .forgot-password {
@@ -150,18 +144,15 @@
     font-weight: 400;
     font-size: 14px;
     text-decoration: none;
-    font-family: 'Poppins';
 }
 
 .halogin .contentbx .formbx .remember-forgot .forgot-password a:hover {
     color: #ff0000;
-    font-family: 'Poppins';
 }
 
 
 .halogin .contentbx .formbx .inputbx p {
     color: #000000;
-    font-family: 'Poppins';
 }
 
 .halogin .contentbx .formbx .inputbx p a {

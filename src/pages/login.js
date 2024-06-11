@@ -9,13 +9,20 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showPassword: false
+            showPassword: false,
+            rememberMeChecked: false
         };
     }
 
     togglePasswordVisibility = () => {
         this.setState(prevState => ({
             showPassword: !prevState.showPassword
+        }));
+    };
+
+    handleRememberMeChange = () => {
+        this.setState(prevState => ({
+            rememberMeChecked: !prevState.rememberMeChecked
         }));
     };
 
@@ -49,7 +56,17 @@ class Login extends React.Component {
                             </div>
                             <div className="remember-forgot">
                                 <div className="remember">
-                                    <input type="checkbox" id="remember" />
+                                    <input
+                                        type="checkbox"
+                                        id="remember"
+                                        checked={this.state.rememberMeChecked}
+                                        onChange={this.handleRememberMeChange}
+                                        style={{
+                                            borderColor: 'red',
+                                            borderRadius: '5px',
+                                            backgroundColor: this.state.rememberMeChecked ? 'red' : 'transparent'
+                                        }}
+                                    />
                                     <label htmlFor="remember">Ingat Saya!</label>
                                 </div>
                                 <div className="forgot-password">

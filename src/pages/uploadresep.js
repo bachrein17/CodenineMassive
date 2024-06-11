@@ -6,12 +6,17 @@ import gambardetailresep from '../image/gambardetailresep.png';
 function UploadResep() {
     const [publisher, setPublisher] = useState('');
     const [instagram, setInstagram] = useState('');
+    const [isChecked, setIsChecked] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         localStorage.setItem('publisher', publisher); // Simpan ke localStorage
         localStorage.setItem('instagram', instagram); // Simpan ke localStorage
         window.location.href = '/uploaddetail'; // Pindah ke halaman UploadDetail
+    };
+
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked);
     };
 
     return (
@@ -52,7 +57,18 @@ function UploadResep() {
                             }} />
                         </div>
                         <div className="mb-4 form-check">
-                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                            <input
+                                type="checkbox"
+                                className="form-check-input"
+                                style={{
+                                    borderColor: 'red',
+                                    borderRadius: '5px',
+                                    backgroundColor: isChecked ? 'red' : 'transparent'
+                                }}
+                                id="exampleCheck1"
+                                checked={isChecked}
+                                onChange={handleCheckboxChange}
+                            />
                             <label className="form-check-label" htmlFor="exampleCheck1">Ingat Saya!</label>
                         </div>
                         <br />

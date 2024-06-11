@@ -6,6 +6,39 @@ import googleIcon from '../image/google.png';
 import facebookIcon from '../image/facebook.png';
 
 class Signup extends React.Component {
+    handleSubmit = async (event) => {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        const data = {
+            username: formData.get('namaLengkap'),
+            email: formData.get('email'),
+            password: formData.get('password'),
+            role: formData.get('role'),
+        };
+
+        try {
+            const response = await fetch('http://localhost:3000/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert('Registration successful!');
+            } else {
+                alert(`Registration failed: ${result.message}`);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred during registration.');
+        }
+    };
+
     render() {
         return (
             <section className="halogin">
@@ -16,7 +49,7 @@ class Signup extends React.Component {
                     <div className="formbx">
                         <h2>Sign Up</h2>
                         <p>Silahkan Isi kolom dibawah untuk mendaftar</p>
-                        <form action="http://localhost:3000/signup" method="post">
+                        <form onSubmit={this.handleSubmit}>
                             <div className="inputbx">
                                 <span>Nama Lengkap</span>
                                 <input type="text" name="namaLengkap" placeholder="Masukan Nama Lengkap" required />

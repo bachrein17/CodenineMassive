@@ -16,6 +16,7 @@ import UserProfile from './pages/profil';
 import DetailResep from './pages/detailresep';
 import CuacaPanas from './pages/cuacapanas';
 import CuacaDingin from './pages/cuacadingin';
+import Notifikasi from './pages/notifikasi';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path='/detailresep' element={<DetailResep />} />
         <Route path='/cuacadingin' element={<CuacaDingin />} />
         <Route path='/cuacapanas' element={<CuacaPanas />} />
+        <Route path='/notifikasi' element={<Notifikasi />} />
       </Routes>
     </Router>
   );

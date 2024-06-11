@@ -41,12 +41,12 @@ function Navbar() {
               <a className="nav-link active" aria-current="page" href="/uploadresep" onClick={closeNavbar}>Unggah Resep</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#notif" onClick={closeNavbar}>
+              <a className="nav-link active" aria-current="page" href="/notifikasi" onClick={closeNavbar}>
                 <img src={notifHitam} alt="Notifikasi" className="icon-img" />
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="profil" onClick={closeNavbar}>
+              <a className="nav-link active" aria-current="page" href="login" onClick={closeNavbar}>
                 <img src={akunHitam} alt="Akun" />
               </a>
             </li>
