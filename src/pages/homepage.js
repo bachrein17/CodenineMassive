@@ -11,10 +11,6 @@ import '../styles/homepage.css';
 const images = require.context('../image', true);
 
 const Body = () => {
-  const redirectToForumPage = () => {
-    window.location.href = 'forum.html';
-  };
-
   return (
     <>
       <Navbar />
@@ -66,10 +62,10 @@ const Body = () => {
         <div className="cuaca">
           <p>Bagaimana kondisi cuaca di daerah anda?</p>
           <div className="logok">
-            <a href="#" target="_blank">
+            <a href="/cuacapanas">
               <img src={images('./panas.png')} alt="" />
             </a>
-            <a href="#">
+            <a href="/cuacadingin">
               <img src={images('./dingin.png')} alt="" />
             </a>
           </div>
