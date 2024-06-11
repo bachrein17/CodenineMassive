@@ -39,8 +39,8 @@ function PopupFilter(props) {
 
       <button id="tampilkanbutton"
         className={styles.tampilkan_button}>
-        <a href="resep" className={styles.tampilkan_button} > </a>
-        Tampilkan Resep
+        <a href="resep" className={styles.alternate_button} > </a>
+        <div className={styles.text1}>Tampilkan Resep</div>
       </button>
     </div>
     
