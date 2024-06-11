@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React  from 'react';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import CardResep from '../components/cardresep';
@@ -24,10 +24,10 @@ const CuacaDingin = () => {
                         tertandingi. Temukan resep yang sesuai selera dan kebutuhanmu di sini!
                     </p>
                         <div className='bannercuaca'>
-                            <p className='bannercuaca-text'>Cuaca Hari Ini Sangat <br />Dingin dan Mendung</p>
+                            <p className='bannercuacatxt'>Cuaca Hari Ini Sangat <br />Dingin dan Mendung</p>
                             <img className='awanmendung' src={images('./awanmendung.png')} alt="Awan Cerah" />
-                            <img className='petirkecil' src={images('./petir1.png')} alt="Matahari" />
-                            <img className='petirbesar' src={images('./petir2.png')} alt="Matahari" />
+                            <img className='petirbesar' src={images('./petir1.png')} alt="Matahari" />
+                            <img className='petirkecil' src={images('./petir2.png')} alt="Matahari" />
                         </div>
 
                     <div className="row row-cols-1 row-cols-md-3 g-1" style={{ display: 'flex' }}>
